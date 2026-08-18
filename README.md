@@ -27,10 +27,14 @@ Each ID is a prefix plus 6 random digits. The script checks Excel so the same ID
 
 1. Double-click `AssetTool.bat` (runs `AssetTool.vbs` with `cscript`).
 2. On first run, enter your email. It is saved to `C:\AssetTool\user_config.txt` and reused later.
-3. Excel opens in the background:
+
+3. Writers have Sharepoint synced in there local machine as shown below , actual sharepoint location is **https://altera.sharepoint.com/:x:/r/sites/psg-CIG/Shared%20Documents/PSG%20Spin%20Off/AssetID/AssetData.xlsx?d=wb922c52e1f314f8ebfcbf7efb4a15805&csf=1&web=1&e=EXJRyv**
+
+   
+5. Excel opens in the background:
    `C:\Users\<you>\Altera\Scale Enablement Group (SEG) - AssetID\AssetData.xlsx`
-4. Choose **1** (new asset) or **2** (existing asset).
-5. The script writes a new Excel row:
+6. Choose **1** (new asset) or **2** (existing asset).
+7. The script writes a new Excel row:
 
    | Column | Field |
    |---|---|
@@ -41,8 +45,8 @@ Each ID is a prefix plus 6 random digits. The script checks Excel so the same ID
    | 5 | Requester email |
    | 6 | Architect email |
 
-6. A receipt is saved as `C:\AssetTool\entries\Asset_<ClusterID>_<OriginID>.txt`.
-7. Outlook sends mail to the requester and CCs the architect.
+8. A receipt is saved as `C:\AssetTool\entries\Asset_<ClusterID>_<OriginID>.txt`.
+9. Outlook sends mail to the requester and CCs the architect.
 
 ### New asset (choice 1)
 
