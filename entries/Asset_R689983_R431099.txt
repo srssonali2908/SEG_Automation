@@ -1,0 +1,9 @@
+Asset Entry Details
+------------------------------
+Asset Type : Resource
+Title      : R31G (3184) Package Mechanical Drawing: AGMA032R31G, AGMB032R31G, AGMA039R31G and AGMB039R31G Devices
+Cluster ID : R689983
+Origin ID  : R431099
+Requested By: sonali.raj.sonal@altera.com
+Architect  : sonali.raj.sonal@altera.com
+Date       : 6/4/2026 1:23:09 PM

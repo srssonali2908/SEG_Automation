@@ -1,0 +1,8 @@
+Asset Entry Details
+------------------------------
+Title      : testing john
+Cluster ID : U452267
+Origin ID  : U792243
+Requested By: sonali.raj.sonal@altera.com
+Manager    : sonali.raj.sonal@altera.com
+Date       : 9/15/2025 11:18:47 AM

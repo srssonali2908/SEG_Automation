@@ -1,0 +1,9 @@
+Asset Entry Details
+------------------------------
+Asset Type : resource
+Title      : test
+Cluster ID : R040951
+Origin ID  : R401359
+Requested By: sonali.raj.sonal@altera.com
+Architect  : sonali.raj.sonal@altera.com
+Date       : 12/8/2025 11:16:27 PM

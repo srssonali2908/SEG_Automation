@@ -1,0 +1,8 @@
+Asset Entry Details
+------------------------------
+Title      : Test for content id generator
+Cluster ID : U880611
+Origin ID  : U008237
+Requested By: sonali.raj.sonal@altera.com
+Manager    : broni.thai@altera.com
+Date       : 9/17/2025 11:05:16 AM

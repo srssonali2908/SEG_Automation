@@ -1,0 +1,8 @@
+Asset Entry Details
+------------------------------
+Title      : text file gen
+Cluster ID : U729549
+Origin ID  : U053215
+Requested By: sonali.raj.sonal@altera.com
+Manager    : sonali.raj.sonal@altera.com
+Date       : 9/14/2025 9:48:57 PM

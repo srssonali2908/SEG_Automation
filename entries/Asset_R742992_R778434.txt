@@ -1,0 +1,9 @@
+Asset Entry Details
+------------------------------
+Asset Type : Resource
+Title      : AV HPS Register Map
+Cluster ID : R742992
+Origin ID  : R778434
+Requested By: sonali.raj.sonal@altera.com
+Architect  : sonali.raj.sonal@altera.com
+Date       : 5/19/2026 10:47:30 AM

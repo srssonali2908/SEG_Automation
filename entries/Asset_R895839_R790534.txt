@@ -1,0 +1,9 @@
+Asset Entry Details
+------------------------------
+Asset Type : Resource
+Title      : Agilex® 5 - Desktop Linux on Agilex® 5 - Presentation
+Cluster ID : R895839
+Origin ID  : R790534
+Requested By: sonali.raj.sonal@altera.com
+Architect  : sonali.raj.sonal@altera.com
+Date       : 7/14/2026 5:14:59 PM

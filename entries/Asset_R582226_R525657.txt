@@ -1,0 +1,9 @@
+Asset Entry Details
+------------------------------
+Asset Type : Resource
+Title      : Agilex® 5 - Attestation certificates, practical use cases
+Cluster ID : R582226
+Origin ID  : R525657
+Requested By: sonali.raj.sonal@altera.com
+Architect  : sonali.raj.sonal@altera.com
+Date       : 7/27/2026 11:39:14 AM

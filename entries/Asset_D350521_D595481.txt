@@ -1,0 +1,9 @@
+Asset Entry Details
+------------------------------
+Asset Type : dita
+Title      : testdita
+Cluster ID : D350521
+Origin ID  : D595481
+Requested By: sonali.raj.sonal@altera.com
+Architect  : sonali.raj.sonal@altera.com
+Date       : 12/15/2025 4:43:32 PM

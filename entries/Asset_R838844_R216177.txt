@@ -1,0 +1,9 @@
+Asset Entry Details
+------------------------------
+Asset Type : resource
+Title      : Agilex® 7 F-Tile Post DFS Known Issues List Quartus Migration Guidelines
+Cluster ID : R838844
+Origin ID  : R216177
+Requested By: sonali.raj.sonal@altera.com
+Architect  : sonali.raj.sonal@altera.com
+Date       : 7/27/2026 11:38:21 AM

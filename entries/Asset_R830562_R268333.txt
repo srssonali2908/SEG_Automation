@@ -1,0 +1,9 @@
+Asset Entry Details
+------------------------------
+Asset Type : Resource
+Title      : SoC Update May 2026 - Presentation
+Cluster ID : R830562
+Origin ID  : R268333
+Requested By: sonali.raj.sonal@altera.com
+Architect  : sonali.raj.sonal@altera.com
+Date       : 7/15/2026 11:42:24 AM

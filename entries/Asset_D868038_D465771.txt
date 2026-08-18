@@ -1,0 +1,9 @@
+Asset Entry Details
+------------------------------
+Asset Type : dita
+Title      : test2
+Cluster ID : D868038
+Origin ID  : D465771
+Requested By: sonali.raj.sonal@altera.com
+Architect  : sonali.raj.sonal@altera.com
+Date       : 1/5/2026 2:46:07 PM

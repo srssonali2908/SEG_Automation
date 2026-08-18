@@ -1,0 +1,9 @@
+Asset Entry Details
+------------------------------
+Asset Type : Resource
+Title      : CV HPS Register Map
+Cluster ID : R642178
+Origin ID  : R078484
+Requested By: sonali.raj.sonal@altera.com
+Architect  : sonali.raj.sonal@altera.com
+Date       : 5/19/2026 10:48:46 AM

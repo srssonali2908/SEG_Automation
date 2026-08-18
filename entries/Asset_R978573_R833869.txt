@@ -1,0 +1,9 @@
+Asset Entry Details
+------------------------------
+Asset Type : resource
+Title      : testres
+Cluster ID : R978573
+Origin ID  : R833869
+Requested By: sonali.raj.sonal@altera.com
+Architect  : sonali.raj.sonal@altera.com
+Date       : 12/8/2025 11:13:56 PM

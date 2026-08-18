@@ -1,0 +1,9 @@
+Asset Entry Details
+------------------------------
+Asset Type : Dita
+Title      : Quartus Prime Pro Help Version
+Cluster ID : D951427
+Origin ID  : D899253
+Requested By: sonali.raj.sonal@altera.com
+Architect  : sonali.raj.sonal@altera.com
+Date       : 4/21/2026 1:37:16 PM

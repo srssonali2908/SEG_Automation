@@ -1,0 +1,9 @@
+Asset Entry Details
+------------------------------
+Asset Type : dita
+Title      : testasset dita
+Cluster ID : D029874
+Origin ID  : D710731
+Requested By: sonali.raj.sonal@altera.com
+Architect  : sonali.raj.sonal@altera.com
+Date       : 12/8/2025 9:34:28 PM

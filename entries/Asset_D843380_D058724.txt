@@ -1,0 +1,8 @@
+Asset Entry Details
+------------------------------
+Title      : Testing New dITA ASSET
+Cluster ID : D843380
+Origin ID  : D058724
+Requested By: sonali.raj.sonal@altera.com
+Manager    : sonali.raj.sonal@altera.com
+Date       : 12/8/2025 9:28:09 PM

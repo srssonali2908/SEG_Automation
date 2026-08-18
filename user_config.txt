@@ -1,0 +1,5 @@
+sonali.raj.sonal@altera.com
+
+UserEmail=sonali.raj.sonal@altera.com
+
+ExcelPath=C:\AssetTool\AssetData.xlsx

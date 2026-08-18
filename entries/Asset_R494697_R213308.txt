@@ -1,0 +1,9 @@
+Asset Entry Details
+------------------------------
+Asset Type : Resource
+Title      : SoC Update May 2026 - PM Recording
+Cluster ID : R494697
+Origin ID  : R213308
+Requested By: sonali.raj.sonal@altera.com
+Architect  : sonali.raj.sonal@altera.com
+Date       : 7/15/2026 11:43:46 AM

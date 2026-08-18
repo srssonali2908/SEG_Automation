@@ -1,0 +1,9 @@
+Asset Entry Details
+------------------------------
+Asset Type : resource
+Title      : resourcenew
+Cluster ID : R842617
+Origin ID  : R902290
+Requested By: sonali.raj.sonal@altera.com
+Architect  : sonali.raj.sonal@altera.com
+Date       : 12/8/2025 9:57:19 PM

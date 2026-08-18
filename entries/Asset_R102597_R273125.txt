@@ -1,0 +1,9 @@
+Asset Entry Details
+------------------------------
+Asset Type : Resource
+Title      : S10  HPS Register Map
+Cluster ID : R102597
+Origin ID  : R273125
+Requested By: sonali.raj.sonal@altera.com
+Architect  : sonali.raj.sonal@altera.com
+Date       : 5/19/2026 10:45:04 AM

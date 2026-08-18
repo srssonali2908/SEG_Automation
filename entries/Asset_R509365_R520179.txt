@@ -1,0 +1,9 @@
+Asset Entry Details
+------------------------------
+Asset Type : Resource
+Title      : Agilex™ 5 Device D-Series and E-Series Package RLC Values for IBIS Models (xlsx)
+Cluster ID : R509365
+Origin ID  : R520179
+Requested By: sonali.raj.sonal@altera.com
+Architect  : sonali.raj.sonal@altera.com
+Date       : 1/12/2026 11:11:06 AM

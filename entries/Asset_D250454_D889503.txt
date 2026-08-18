@@ -1,0 +1,9 @@
+Asset Entry Details
+------------------------------
+Asset Type : dita
+Title      : testsharepoint exc el dita
+Cluster ID : D250454
+Origin ID  : D889503
+Requested By: sonali.raj.sonal@altera.com
+Architect  : sonali.raj.sonal@altera.com
+Date       : 12/16/2025 2:00:16 PM

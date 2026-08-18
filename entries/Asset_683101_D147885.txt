@@ -1,0 +1,9 @@
+Asset Entry Details
+------------------------------
+Asset Type : dita
+Title      : test
+Cluster ID : 683101
+Origin ID  : D147885
+Requested By: sonali.raj.sonal@altera.com
+Architect  : sonali.raj.sonal@altera.com
+Date       : 1/5/2026 2:47:47 PM

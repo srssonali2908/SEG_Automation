@@ -1,0 +1,9 @@
+Asset Entry Details
+------------------------------
+Asset Type : Dita
+Title      : testaltera
+Cluster ID : D720638
+Origin ID  : D627250
+Requested By: sonali.raj.sonal@altera.com
+Architect  : sonali.raj.sonal@altera.com
+Date       : 12/8/2025 10:44:40 PM

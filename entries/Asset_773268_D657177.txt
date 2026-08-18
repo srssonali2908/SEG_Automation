@@ -1,0 +1,9 @@
+Asset Entry Details
+------------------------------
+Asset Type : dita
+Title      : High Bandwidth Memory (HBM2E) Interface Agilex 7 M-Series FPGA IP Design Example User Guide
+Cluster ID : 773268
+Origin ID  : D657177
+Requested By: sonali.raj.sonal@altera.com
+Architect  : sonali.raj.sonal@altera.com
+Date       : 1/12/2026 2:23:52 PM

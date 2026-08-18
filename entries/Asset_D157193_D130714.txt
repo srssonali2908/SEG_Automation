@@ -1,0 +1,9 @@
+Asset Entry Details
+------------------------------
+Asset Type : DITA
+Title      : Field Factory Call July 2026 Presentation
+Cluster ID : D157193
+Origin ID  : D130714
+Requested By: sonali.raj.sonal@altera.com
+Architect  : sonali.raj.sonal@altera.com
+Date       : 8/6/2026 1:29:29 PM

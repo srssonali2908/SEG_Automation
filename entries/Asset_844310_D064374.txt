@@ -1,0 +1,9 @@
+Asset Entry Details
+------------------------------
+Asset Type : dita
+Title      : test existing group
+Cluster ID : 844310
+Origin ID  : D064374
+Requested By: sonali.raj.sonal@altera.com
+Architect  : sonali.raj.sonal@altera.com
+Date       : 1/5/2026 1:47:28 PM

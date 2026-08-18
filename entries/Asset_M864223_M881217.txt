@@ -1,0 +1,9 @@
+Asset Entry Details
+------------------------------
+Asset Type : markdown
+Title      : markdown new
+Cluster ID : M864223
+Origin ID  : M881217
+Requested By: sonali.raj.sonal@altera.com
+Architect  : sonali.raj.sonal@altera.com
+Date       : 12/8/2025 10:00:27 PM

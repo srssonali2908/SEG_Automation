@@ -1,0 +1,9 @@
+Asset Entry Details
+------------------------------
+Asset Type : Resource
+Title      : P4 Suite for FPGA 2026.2
+Cluster ID : R291989
+Origin ID  : R431160
+Requested By: sonali.raj.sonal@altera.com
+Architect  : sonali.raj.sonal@altera.com
+Date       : 7/27/2026 11:41:57 AM

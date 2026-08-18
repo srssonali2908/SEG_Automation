@@ -1,0 +1,9 @@
+Asset Entry Details
+------------------------------
+Asset Type : Resource
+Title      : Field Factory Call July 2026 Recording
+Cluster ID : R302731
+Origin ID  : R204674
+Requested By: sonali.raj.sonal@altera.com
+Architect  : sonali.raj.sonal@altera.com
+Date       : 8/6/2026 1:33:45 PM

@@ -1,0 +1,9 @@
+Asset Entry Details
+------------------------------
+Asset Type : dita
+Title      : Power and Thermal Anlayzer User Guide
+Cluster ID : 865226
+Origin ID  : D064709
+Requested By: sonali.raj.sonal@altera.com
+Architect  : sonali.raj.sonal@altera.com
+Date       : 6/30/2026 1:41:51 PM

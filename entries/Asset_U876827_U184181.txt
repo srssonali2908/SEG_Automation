@@ -1,0 +1,8 @@
+Asset Entry Details
+------------------------------
+Title      : testing demo
+Cluster ID : U876827
+Origin ID  : U184181
+Requested By: sonali.raj.sonal@altera.com
+Manager    : farzaneh.zaeni@altera.com
+Date       : 9/17/2025 4:41:28 PM

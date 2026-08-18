@@ -1,0 +1,9 @@
+Asset Entry Details
+------------------------------
+Asset Type : Resource
+Title      : Agilex® 5 FPGA - Onboarding Attestation
+Cluster ID : R117428
+Origin ID  : R545463
+Requested By: sonali.raj.sonal@altera.com
+Architect  : sonali.raj.sonal@altera.com
+Date       : 8/6/2026 1:35:00 PM

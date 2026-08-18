@@ -1,0 +1,9 @@
+Asset Entry Details
+------------------------------
+Asset Type : Resource
+Title      : ADG Development Kit Selector
+Cluster ID : R248181
+Origin ID  : R620704
+Requested By: sonali.raj.sonal@altera.com
+Architect  : sonali.raj.sonal@altera.com
+Date       : 7/27/2026 11:42:48 AM

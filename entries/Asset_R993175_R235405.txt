@@ -1,0 +1,9 @@
+Asset Entry Details
+------------------------------
+Asset Type : resource
+Title      : test
+Cluster ID : R993175
+Origin ID  : R235405
+Requested By: sonali.raj.sonal@altera.com
+Architect  : sonali.raj.sonal@altera.com
+Date       : 12/16/2025 7:57:05 PM

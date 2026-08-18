@@ -1,0 +1,8 @@
+Asset Entry Details
+------------------------------
+Title      : test unstrictured
+Cluster ID : U880611
+Origin ID  : U561866
+Requested By: sonali.raj.sonal@intel.com
+Manager    : sonali.raj.sonal@altera.com
+Date       : 9/17/2025 11:04:04 AM

@@ -1,0 +1,9 @@
+Asset Entry Details
+------------------------------
+Asset Type : Resource
+Title      : Altera Plans Related to the Cyber Resilience Act (CRA)
+Cluster ID : R647671
+Origin ID  : R287041
+Requested By: sonali.raj.sonal@altera.com
+Architect  : sonali.raj.sonal@altera.com
+Date       : 6/25/2026 11:50:09 AM

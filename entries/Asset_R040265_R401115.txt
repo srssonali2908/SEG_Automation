@@ -1,0 +1,9 @@
+Asset Entry Details
+------------------------------
+Asset Type : Resource
+Title      : Detecting Altera FPGA SDM Firmware and Version Information in Bitstream Files (RBF, RPD, POF, JIC)
+Cluster ID : R040265
+Origin ID  : R401115
+Requested By: sonali.raj.sonal@altera.com
+Architect  : sonali.raj.sonal@altera.com
+Date       : 7/10/2026 3:19:47 PM

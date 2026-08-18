@@ -1,0 +1,9 @@
+Asset Entry Details
+------------------------------
+Asset Type : Resource
+Title      : Visual Desinger Studio User guide
+Cluster ID : R007870
+Origin ID  : R516746
+Requested By: sonali.raj.sonal@altera.com
+Architect  : sonali.raj.sonal@altera.com
+Date       : 4/20/2026 4:01:36 PM

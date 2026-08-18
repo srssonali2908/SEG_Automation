@@ -1,0 +1,9 @@
+Asset Entry Details
+------------------------------
+Asset Type : Resource
+Title      : Altera training for Holoscan Sensor Bridge Solutions - Meeting Slides
+Cluster ID : R975933
+Origin ID  : R723823
+Requested By: sonali.raj.sonal@altera.com
+Architect  : sonali.raj.sonal@altera.com
+Date       : 7/27/2026 11:39:58 AM
