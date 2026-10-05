@@ -20,6 +20,8 @@ from link_checker import report_filename, scrape_pdf_links
 app = Flask(__name__)
 app.config["MAX_CONTENT_LENGTH"] = 200 * 1024 * 1024
 
+CHECK_WORKERS = int(os.environ.get("LINK_CHECKER_WORKERS", 8))
+
 
 @app.route("/", methods=["GET", "POST"])
 def index():
@@ -31,7 +33,7 @@ def index():
             return render_template("index.html", error="Please upload a valid PDF file!"), 400
 
         # Processed in memory so nothing is left behind on disk.
-        csv_data = scrape_pdf_links(io.BytesIO(upload.read()))
+        csv_data = scrape_pdf_links(io.BytesIO(upload.read()), workers=CHECK_WORKERS)
         download_name = report_filename(secure_filename(upload.filename))
 
         # The BOM lets Excel open the CSV as UTF-8.
