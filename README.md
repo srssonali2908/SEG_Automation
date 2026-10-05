@@ -80,10 +80,25 @@ Asks for an existing Cluster ID, title, and type for the new origin. If the Clus
 
 `BrokenLinkChecker/` checks every external hyperlink in a PDF and produces a CSV report (`broken-links-<pdf name>.csv`). Internal document anchors are skipped, and each distinct URL is checked once, in parallel.
 
-### Running it
+### Standalone app (recommended)
 
-Requires Python 3.8+.
+`BrokenLinkChecker.exe` is a single Windows program. It needs no Python, installer or browser.
 
+1. Get the exe:
+   - From the repo's **Releases** page, or
+   - From **Actions → Build BrokenLinkChecker.exe →** latest run **→ Artifacts → BrokenLinkChecker** (download and unzip).
+2. Double-click `BrokenLinkChecker.exe`. You can also drop a PDF onto the exe icon.
+3. Click **Choose PDF...**, then **Check links**.
+4. Review the results: broken links are red and links that need VPN are yellow. Tick **Show only problems** to filter, or double-click a row to open the link.
+5. Click **Save CSV report...** to export.
+
+Windows SmartScreen may warn the first time because the exe isn't code-signed. Choose **More info → Run anyway**.
+
+**Building the exe yourself:** on a Windows PC with Python 3.10+, double-click `BrokenLinkChecker\build_exe.bat`. The result is `BrokenLinkChecker\dist\BrokenLinkChecker.exe`. The GitHub workflow also builds it on every change to `BrokenLinkChecker/`. Pushing a tag such as `blc-v1.0` publishes it as a release.
+
+### Other ways to run it (Python 3.10+)
+
+- **Desktop app from source:** `python gui.py`
 - **Web page:** double-click `BrokenLinkChecker\BrokenLinkChecker.bat`. It installs the dependencies, starts the app, and opens http://127.0.0.1:5000. Upload a PDF and the CSV downloads automatically.
 - **Command line:**
 
