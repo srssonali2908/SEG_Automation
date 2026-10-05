@@ -14,7 +14,7 @@ import io
 import os
 import re
 import sys
-from concurrent.futures import ThreadPoolExecutor
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from urllib.parse import urlparse
 
 import requests
@@ -49,6 +49,7 @@ CSV_HEADER = [
 ]
 
 STATUS_VPN = "Corporate Network Required"
+NO_LINKS_MESSAGE = "No hyperlinked web URLs found in this PDF document."
 
 
 def _is_corporate(url):
@@ -182,32 +183,53 @@ def extract_links(pdf_source):
     return links
 
 
-def scrape_pdf_links(pdf_source, workers=8):
-    """Extract and check every link in a PDF, returning the CSV report as text."""
+def check_links(links, workers=8, progress=None):
+    """
+    Check (page_number, url) pairs and return report rows matching CSV_HEADER.
+
+    progress, if given, is called as progress(done, total) after each distinct
+    URL finishes. Each distinct URL is checked once, even if it appears on
+    many pages.
+    """
+    unique_urls = list(dict.fromkeys(url for _, url in links))
+    results = {}
+    with ThreadPoolExecutor(max_workers=max(1, workers)) as pool:
+        futures = {pool.submit(check_link, url): url for url in unique_urls}
+        for done, future in enumerate(as_completed(futures), 1):
+            results[futures[future]] = future.result()
+            if progress:
+                progress(done, len(unique_urls))
+
+    rows = []
+    for page_num, url in links:
+        status, redirect, is_intel = results[url]
+        rows.append([page_num, url, status, redirect or "None", is_intel, is_broken(status)])
+    return rows
+
+
+def rows_to_csv(rows):
     output = io.StringIO()
     writer = csv.writer(output)
     writer.writerow(CSV_HEADER)
+    writer.writerows(rows)
+    return output.getvalue()
 
+
+def _message_row(message):
+    return [message] + [""] * (len(CSV_HEADER) - 1)
+
+
+def scrape_pdf_links(pdf_source, workers=8):
+    """Extract and check every link in a PDF, returning the CSV report as text."""
     try:
         links = extract_links(pdf_source)
     except Exception as e:
-        writer.writerow(["Error reading PDF: {}".format(e), "", "", "", "", ""])
-        return output.getvalue()
+        return rows_to_csv([_message_row("Error reading PDF: {}".format(e))])
 
     if not links:
-        writer.writerow(["No hyperlinked web URLs found in this PDF document.", "", "", "", "", ""])
-        return output.getvalue()
+        return rows_to_csv([_message_row(NO_LINKS_MESSAGE)])
 
-    # Each distinct URL is checked once, even if it appears on many pages.
-    unique_urls = list(dict.fromkeys(url for _, url in links))
-    with ThreadPoolExecutor(max_workers=max(1, workers)) as pool:
-        results = dict(zip(unique_urls, pool.map(check_link, unique_urls)))
-
-    for page_num, url in links:
-        status, redirect, is_intel = results[url]
-        writer.writerow([page_num, url, status, redirect or "None", is_intel, is_broken(status)])
-
-    return output.getvalue()
+    return rows_to_csv(check_links(links, workers=workers))
 
 
 def report_filename(pdf_name):
