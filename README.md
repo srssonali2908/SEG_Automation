@@ -1,6 +1,9 @@
 # SEG_Automation
 
-Internal Altera Scale Enablement Group (SEG) automation. This repository currently contains **AssetTool**, a Windows asset-ID registrar.
+Internal Altera Scale Enablement Group (SEG) automation. This repository contains:
+
+- **AssetTool**, a Windows asset-ID registrar
+- **BrokenLinkChecker**, a PDF hyperlink checker ([see below](#brokenlinkchecker))
 
 ## What AssetTool does
 
@@ -72,3 +75,38 @@ Asks for an existing Cluster ID, title, and type for the new origin. If the Clus
 | `entries/` | Text receipts for created IDs |
 
 `user_config.txt` is local-only and is not committed.
+
+## BrokenLinkChecker
+
+`BrokenLinkChecker/` checks every external hyperlink in a PDF and produces a CSV report (`broken-links-<pdf name>.csv`). Internal document anchors are skipped, and each distinct URL is checked once, in parallel.
+
+### Running it
+
+Requires Python 3.8+.
+
+- **Web page:** double-click `BrokenLinkChecker\BrokenLinkChecker.bat`. It installs the dependencies, starts the app, and opens http://127.0.0.1:5000. Upload a PDF and the CSV downloads automatically.
+- **Command line:**
+
+  ```
+  cd BrokenLinkChecker
+  pip install -r requirements.txt
+  python link_checker.py "My Guide.pdf" -o report.csv
+  ```
+
+### Report columns
+
+| Column | Meaning |
+|---|---|
+| Page Number | PDF page the link is on |
+| Original Link | URL as written in the PDF |
+| Status / Error Code | `200 OK`, `HTTP <code>`, `Connection Failed`, `Corporate Network Required`, or `Request Error` |
+| Redirect History (From -> To) | Final URL after redirects, or `None` if the link did not redirect |
+| Contains Intel? | `Yes` if the link points at `intel.com` |
+| Broken? | `No` for `200 OK`, `Unverified (VPN)` for corporate links that could not be reached, otherwise `Yes` |
+
+### Intel / Altera handling
+
+- `corpredirect.intel.com` 404-redirector links are unwrapped and the embedded target is checked.
+- Known looping directory pages (for example `https://www.altera.com/design`) are mapped to their public equivalents.
+- If a host is unreachable, a `/programmable/<doc id>` link is retried at `https://docs.altera.com/r/docs/<doc id>/current`.
+- Unreachable `intel.com` / `altera.com` hosts are reported as `Corporate Network Required` rather than broken. Run the checker on VPN to verify those links.

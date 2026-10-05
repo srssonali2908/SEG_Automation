@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PDF Broken Link Checker</title>
+  <style>
+    :root { --brand: #0068b5; --bg: #f4f6f9; --text: #1f2933; --muted: #616e7c; }
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: "Segoe UI", system-ui, sans-serif; background: var(--bg); color: var(--text);
+           min-height: 100vh; display: flex; align-items: center; justify-content: center; }
+    .card { background: #fff; width: min(520px, 92vw); padding: 2rem 2.25rem; border-radius: 12px;
+            box-shadow: 0 8px 30px rgba(0,0,0,.08); }
+    h1 { margin: 0 0 .25rem; font-size: 1.5rem; }
+    p.sub { margin: 0 0 1.5rem; color: var(--muted); font-size: .95rem; }
+    .drop { display: block; border: 2px dashed #c3cfd9; border-radius: 10px; padding: 2rem 1rem; text-align: center;
+            cursor: pointer; transition: border-color .15s, background .15s; }
+    .drop:hover, .drop.over { border-color: var(--brand); background: #eef6fc; }
+    .drop input { display: none; }
+    .drop strong { color: var(--brand); }
+    #fname { margin-top: .5rem; font-size: .9rem; color: var(--muted); word-break: break-all; }
+    button { margin-top: 1.25rem; width: 100%; padding: .8rem; border: 0; border-radius: 8px; background: var(--brand);
+             color: #fff; font-size: 1rem; font-weight: 600; cursor: pointer; }
+    button:disabled { opacity: .6; cursor: wait; }
+    .flash { background: #fdecea; color: #a61b1b; padding: .7rem 1rem; border-radius: 8px; margin-bottom: 1rem; }
+    .status { display: none; margin-top: 1rem; color: var(--muted); font-size: .9rem; text-align: center; }
+    ul { color: var(--muted); font-size: .85rem; padding-left: 1.1rem; margin: 1.5rem 0 0; }
+  </style>
+</head>
+<body>
+  <main class="card">
+    <h1>PDF Broken Link Checker</h1>
+    <p class="sub">Upload a PDF to check every external hyperlink and download a CSV report.</p>
+
+    {% if error %}<div class="flash">{{ error }}</div>{% endif %}
+
+    <form id="form" method="post" enctype="multipart/form-data">
+      <label class="drop" id="drop">
+        <input type="file" name="file" id="file" accept="application/pdf,.pdf" required>
+        <div><strong>Choose a PDF</strong> or drag it here</div>
+        <div id="fname"></div>
+      </label>
+      <button type="submit" id="submit">Check links</button>
+      <div class="status" id="status">Checking links&hellip; large documents can take a few minutes.</div>
+    </form>
+
+    <ul>
+      <li>Only external http(s) links are checked; internal document anchors are skipped.</li>
+      <li>Links that need the corporate network are reported as <em>Unverified (VPN)</em>.</li>
+    </ul>
+  </main>
+
+  <script>
+    const input = document.getElementById('file'), drop = document.getElementById('drop'),
+          fname = document.getElementById('fname'), btn = document.getElementById('submit'),
+          status = document.getElementById('status');
+    input.addEventListener('change', () => { fname.textContent = input.files[0] ? input.files[0].name : ''; });
+    ['dragover', 'dragenter'].forEach(e => drop.addEventListener(e, ev => { ev.preventDefault(); drop.classList.add('over'); }));
+    ['dragleave', 'drop'].forEach(e => drop.addEventListener(e, () => drop.classList.remove('over')));
+    drop.addEventListener('drop', ev => {
+      ev.preventDefault();
+      input.files = ev.dataTransfer.files;
+      input.dispatchEvent(new Event('change'));
+    });
+    const form = document.getElementById('form');
+    form.addEventListener('submit', async ev => {
+      if (!window.fetch) return;
+      ev.preventDefault();
+      btn.disabled = true; status.style.display = 'block';
+      status.textContent = 'Checking links\u2026 large documents can take a few minutes.';
+      try {
+        const res = await fetch(form.action || location.href, { method: 'POST', body: new FormData(form) });
+        const type = res.headers.get('Content-Type') || '';
+        if (!type.startsWith('text/csv')) {
+          document.open(); document.write(await res.text()); document.close();
+          return;
+        }
+        const disp = res.headers.get('Content-Disposition') || '';
+        const match = disp.match(/filename="([^"]+)"/);
+        const a = document.createElement('a');
+        a.href = URL.createObjectURL(await res.blob());
+        a.download = match ? match[1] : 'broken-links.csv';
+        document.body.appendChild(a); a.click(); a.remove();
+        status.textContent = 'Done \u2014 report downloaded.';
+      } catch (e) {
+        status.textContent = 'Something went wrong: ' + e.message;
+      } finally {
+        btn.disabled = false;
+      }
+    });
+  </script>
+</body>
+</html>
