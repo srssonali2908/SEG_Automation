@@ -108,6 +108,18 @@ Windows SmartScreen may warn the first time because the exe isn't code-signed. C
   python link_checker.py "My Guide.pdf" -o report.csv
   ```
 
+### Hosting it on a web2py server (for example seg.altera.com)
+
+The `web2py/` folder adds the checker as a page in an existing web2py application. It works on Python 3 and on Python 2.7, with either `pypdf` or `PyPDF2`. Copy three files into the application (`applications/<app>/`):
+
+| From this repo | To the web2py application |
+|---|---|
+| `BrokenLinkChecker/link_checker.py` | `modules/link_checker.py` |
+| `BrokenLinkChecker/web2py/controllers/broken_link_checker.py` | `controllers/broken_link_checker.py` |
+| `BrokenLinkChecker/web2py/views/broken_link_checker/index.html` | `views/broken_link_checker/index.html` |
+
+The server needs `requests` and either `pypdf` (Python 3) or `PyPDF2` (Python 2.7). The page is then served at `https://<server>/<app>/broken_link_checker/index`.
+
 ### Report columns
 
 | Column | Meaning |
