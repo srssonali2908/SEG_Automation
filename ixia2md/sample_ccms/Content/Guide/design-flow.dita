@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task id="design-flow">
+  <title>GTS Transceiver Design Flow</title>
+  <taskbody>
+    <context><p>Integrate a GTS transceiver PHY system with three IPs, as shown in the flow chart.</p></context>
+    <steps>
+      <step><cmd>Instantiate the <codeph>GTS PMA/FEC Direct PHY IP</codeph>.</cmd></step>
+      <step><cmd>Connect the clocks.</cmd><info><note type="important">Use the System PLL Clocks IP.</note></info></step>
+    </steps>
+    <result>
+      <fig>
+        <title>GTS Transceiver Design Flow</title>
+        <image href="images/flow.png" alt="Design flow chart"/>
+      </fig>
+    </result>
+  </taskbody>
+</task>
