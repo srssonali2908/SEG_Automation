@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept id="overview">
+  <title>GTS Transceiver Overview</title>
+  <shortdesc>This guide describes the GTS transceivers in Agilex&#8482; 3 FPGAs.</shortdesc>
+  <conbody>
+    <p>The transceiver supports data rates of 1&#8211;12.5 Gbps with <b>NRZ</b> signaling.</p>
+    <table>
+      <title>Key GTS Transceiver Features</title>
+      <tgroup cols="2">
+        <thead><row><entry>Feature</entry><entry>Support</entry></row></thead>
+        <tbody>
+          <row><entry>Number of available PMAs</entry><entry>4 PMAs</entry></row>
+          <row><entry>Data rate range</entry><entry>1&#8211;12.5 Gbps NRZ</entry></row>
+        </tbody>
+      </tgroup>
+    </table>
+    <note>Devices with GTS transceiver and HPS only.</note>
+    <ul><li>Architecture details</li><li>IP implementation</li></ul>
+  </conbody>
+  <related-links>
+    <link href="architecture.dita"><linktext>GTS Transceiver Architecture</linktext></link>
+  </related-links>
+</concept>

@@ -1,0 +1,2030 @@
+{
+  "source": "/mnt/user-data/attachments/5b306a12-f146-5ddd-a927-6316dc07668e/4062129d-gts-xcvr-phy-ug-ag-3-2026Jul_401final_review__1_.pdf.txt",
+  "meta": {
+    "publication_content_id": "D062497",
+    "online_version": "848344",
+    "date": "2026.08.10",
+    "title": "GTS Transceiver PHY User Guide",
+    "has_taxonomy_section": true,
+    "has_description_section": true,
+    "has_keywords_section": true
+  },
+  "sections": [
+    {
+      "number": "1",
+      "title": "GTS Transceiver Overview",
+      "page": 9,
+      "depth": 1
+    },
+    {
+      "number": "1.1",
+      "title": "GTS Transceiver Design Flow",
+      "page": 9,
+      "depth": 2
+    },
+    {
+      "number": "2",
+      "title": "GTS Transceiver Architecture",
+      "page": 11,
+      "depth": 1
+    },
+    {
+      "number": "2.1",
+      "title": "Building Blocks",
+      "page": 11,
+      "depth": 2
+    },
+    {
+      "number": "2.1.1",
+      "title": "PMA",
+      "page": 12,
+      "depth": 3
+    },
+    {
+      "number": "2.1.1.1",
+      "title": "Protocol Support Using PMA Direct Mode",
+      "page": 13,
+      "depth": 4
+    },
+    {
+      "number": "2.1.1.1.1",
+      "title": "SDI",
+      "page": 13,
+      "depth": 5
+    },
+    {
+      "number": "2.1.1.1.2",
+      "title": "HDMI",
+      "page": 13,
+      "depth": 5
+    },
+    {
+      "number": "2.1.1.1.3",
+      "title": "OTN",
+      "page": 13,
+      "depth": 5
+    },
+    {
+      "number": "2.1.1.1.4",
+      "title": "SATA/SAS",
+      "page": 14,
+      "depth": 5
+    },
+    {
+      "number": "2.1.2",
+      "title": "FEC",
+      "page": 14,
+      "depth": 3
+    },
+    {
+      "number": "2.1.3",
+      "title": "PCS",
+      "page": 14,
+      "depth": 3
+    },
+    {
+      "number": "2.1.4",
+      "title": "Ethernet MAC",
+      "page": 14,
+      "depth": 3
+    },
+    {
+      "number": "2.1.5",
+      "title": "PCI Express* Hard IP",
+      "page": 14,
+      "depth": 3
+    },
+    {
+      "number": "2.1.6",
+      "title": "PLL and Clock Networks",
+      "page": 15,
+      "depth": 3
+    },
+    {
+      "number": "2.1.7",
+      "title": "Avalon® Memory-Mapped Interface",
+      "page": 15,
+      "depth": 3
+    },
+    {
+      "number": "2.2",
+      "title": "Channel Placement Rules and Design Requirements",
+      "page": 15,
+      "depth": 2
+    },
+    {
+      "number": "2.2.1",
+      "title": "Hard IP Rules",
+      "page": 15,
+      "depth": 3
+    },
+    {
+      "number": "2.2.2",
+      "title": "Use Scenario Rules",
+      "page": 17,
+      "depth": 3
+    },
+    {
+      "number": "2.2.3",
+      "title": "Unused PMA Rules",
+      "page": 18,
+      "depth": 3
+    },
+    {
+      "number": "2.2.3.1",
+      "title": "Unused PMA Not Planned for Use in the Future",
+      "page": 18,
+      "depth": 4
+    },
+    {
+      "number": "2.2.3.2",
+      "title": "Unused PMA Planned for Use in the Future",
+      "page": 18,
+      "depth": 4
+    },
+    {
+      "number": "2.2.4",
+      "title": "General Design Requirement",
+      "page": 18,
+      "depth": 3
+    },
+    {
+      "number": "2.3",
+      "title": "PMA Architecture",
+      "page": 19,
+      "depth": 2
+    },
+    {
+      "number": "2.3.1",
+      "title": "Transmitter PMA Architecture",
+      "page": 19,
+      "depth": 3
+    },
+    {
+      "number": "2.3.1.1",
+      "title": "Transmitter Buffer",
+      "page": 19,
+      "depth": 4
+    },
+    {
+      "number": "2.3.1.2",
+      "title": "Serializer",
+      "page": 20,
+      "depth": 4
+    },
+    {
+      "number": "2.3.1.3",
+      "title": "Data Pattern Generator and Verifier",
+      "page": 21,
+      "depth": 4
+    },
+    {
+      "number": "2.3.2",
+      "title": "Receiver PMA Architecture",
+      "page": 21,
+      "depth": 3
+    },
+    {
+      "number": "2.3.2.1",
+      "title": "Receiver Buffer and Equalizer",
+      "page": 21,
+      "depth": 4
+    },
+    {
+      "number": "2.3.2.1.1",
+      "title": "Control Unit",
+      "page": 22,
+      "depth": 5
+    },
+    {
+      "number": "2.3.2.2",
+      "title": "Deserializer",
+      "page": 23,
+      "depth": 4
+    },
+    {
+      "number": "2.3.2.3",
+      "title": "CDR Block",
+      "page": 23,
+      "depth": 4
+    },
+    {
+      "number": "2.3.2.4",
+      "title": "RX PMA Tuning",
+      "page": 23,
+      "depth": 4
+    },
+    {
+      "number": "2.3.2.5",
+      "title": "RX PMA Equalization Modes",
+      "page": 23,
+      "depth": 4
+    },
+    {
+      "number": "2.3.2.5.1",
+      "title": "RX Auto Adaptation Mode",
+      "page": 24,
+      "depth": 5
+    },
+    {
+      "number": "2.3.2.5.2",
+      "title": "RX Manual Equalization Mode",
+      "page": 24,
+      "depth": 5
+    },
+    {
+      "number": "2.3.2.5.3",
+      "title": "RX Native Adaptation Mode",
+      "page": 24,
+      "depth": 5
+    },
+    {
+      "number": "2.3.3",
+      "title": "PMA Loopback Modes",
+      "page": 24,
+      "depth": 3
+    },
+    {
+      "number": "2.4",
+      "title": "PCS Architecture",
+      "page": 25,
+      "depth": 2
+    },
+    {
+      "number": "2.5",
+      "title": "Forward Error Correction (FEC) Architecture",
+      "page": 26,
+      "depth": 2
+    },
+    {
+      "number": "2.5.1",
+      "title": "FEC Loopback Mode",
+      "page": 26,
+      "depth": 3
+    },
+    {
+      "number": "2.6",
+      "title": "Clock Architecture",
+      "page": 27,
+      "depth": 2
+    },
+    {
+      "number": "2.6.1",
+      "title": "Reference Clock Network",
+      "page": 28,
+      "depth": 3
+    },
+    {
+      "number": "2.6.1.1",
+      "title": "PMA Primary PLL Configuration",
+      "page": 30,
+      "depth": 4
+    },
+    {
+      "number": "2.6.2",
+      "title": "Datapath Clock Network",
+      "page": 31,
+      "depth": 3
+    },
+    {
+      "number": "2.6.3",
+      "title": "System PLL",
+      "page": 33,
+      "depth": 3
+    },
+    {
+      "number": "2.6.3.1",
+      "title": "I/O PLL in HVIO Bank as System PLL",
+      "page": 33,
+      "depth": 4
+    },
+    {
+      "number": "2.6.3.2",
+      "title": "System PLL Clock for FPGA Core",
+      "page": 34,
+      "depth": 4
+    },
+    {
+      "number": "2.6.3.3",
+      "title": "System PLL with HVIO Reference Clock",
+      "page": 34,
+      "depth": 4
+    },
+    {
+      "number": "2.6.4",
+      "title": "Datapath Clock Cadences",
+      "page": 34,
+      "depth": 3
+    },
+    {
+      "number": "2.6.5",
+      "title": "Shared Clocking Resources Between the GTS Transceiver Bank and HVIO Bank",
+      "page": 36,
+      "depth": 3
+    },
+    {
+      "number": "2.7",
+      "title": "Bonding and Deskew",
+      "page": 38,
+      "depth": 2
+    },
+    {
+      "number": "2.7.1",
+      "title": "Bonding Architecture",
+      "page": 38,
+      "depth": 3
+    },
+    {
+      "number": "2.7.1.1",
+      "title": "PCS Configuration: Tx and Rx Datapaths",
+      "page": 39,
+      "depth": 4
+    },
+    {
+      "number": "2.7.2",
+      "title": "TX Deskew Function",
+      "page": 39,
+      "depth": 3
+    },
+    {
+      "number": "3",
+      "title": "Implementing the GTS PMA/FEC Direct PHY IP",
+      "page": 40,
+      "depth": 1
+    },
+    {
+      "number": "3.1",
+      "title": "IP Overview",
+      "page": 40,
+      "depth": 2
+    },
+    {
+      "number": "3.1.1",
+      "title": "PMA Direct Supported Modes",
+      "page": 43,
+      "depth": 3
+    },
+    {
+      "number": "3.1.2",
+      "title": "FEC Direct Supported Modes",
+      "page": 44,
+      "depth": 3
+    },
+    {
+      "number": "3.1.3",
+      "title": "PCS Direct Supported Modes",
+      "page": 44,
+      "depth": 3
+    },
+    {
+      "number": "3.1.4",
+      "title": "Unsupported PMA/FEC/PCS Modes",
+      "page": 45,
+      "depth": 3
+    },
+    {
+      "number": "3.2",
+      "title": "Designing with the GTS PMA/FEC Direct PHY IP",
+      "page": 45,
+      "depth": 2
+    },
+    {
+      "number": "3.3",
+      "title": "Configuring the GTS PMA/FEC Direct PHY IP",
+      "page": 46,
+      "depth": 2
+    },
+    {
+      "number": "3.3.1",
+      "title": "Preset IP Parameter Settings",
+      "page": 47,
+      "depth": 3
+    },
+    {
+      "number": "3.3.2",
+      "title": "Mode and Common Datapath Options",
+      "page": 48,
+      "depth": 3
+    },
+    {
+      "number": "3.3.3",
+      "title": "Dynamically Reconfigurable PHY Settings",
+      "page": 51,
+      "depth": 3
+    },
+    {
+      "number": "3.3.4",
+      "title": "TX Datapath Options",
+      "page": 52,
+      "depth": 3
+    },
+    {
+      "number": "3.3.4.1",
+      "title": "TX PMA Interface Parameters",
+      "page": 54,
+      "depth": 4
+    },
+    {
+      "number": "3.3.5",
+      "title": "RX Datapath Options",
+      "page": 56,
+      "depth": 3
+    },
+    {
+      "number": "3.3.5.1",
+      "title": "RX PMA Interface Parameters",
+      "page": 58,
+      "depth": 4
+    },
+    {
+      "number": "3.3.6",
+      "title": "PMA Configuration Rules for Specific Protocol Mode Implementations",
+      "page": 60,
+      "depth": 3
+    },
+    {
+      "number": "3.3.6.1",
+      "title": "PMA Configuration Rules for SDI Mode",
+      "page": 60,
+      "depth": 4
+    },
+    {
+      "number": "3.3.6.2",
+      "title": "PMA Configuration Rules for HDMI Mode",
+      "page": 61,
+      "depth": 4
+    },
+    {
+      "number": "3.3.6.3",
+      "title": "PMA Configuration Rules for GPON Mode",
+      "page": 62,
+      "depth": 4
+    },
+    {
+      "number": "3.3.6.4",
+      "title": "PMA Configuration Rules for OTN Mode",
+      "page": 62,
+      "depth": 4
+    },
+    {
+      "number": "3.3.6.5",
+      "title": "PMA Configuration Rules for SATA/SAS Mode",
+      "page": 63,
+      "depth": 4
+    },
+    {
+      "number": "3.3.7",
+      "title": "FEC Options",
+      "page": 64,
+      "depth": 3
+    },
+    {
+      "number": "3.3.8",
+      "title": "PCS Options",
+      "page": 65,
+      "depth": 3
+    },
+    {
+      "number": "3.3.9",
+      "title": "Avalon Memory-Mapped Interface Options",
+      "page": 66,
+      "depth": 3
+    },
+    {
+      "number": "3.3.10",
+      "title": "Register Map IP-XACT Support",
+      "page": 66,
+      "depth": 3
+    },
+    {
+      "number": "3.3.11",
+      "title": "Analog Parameter Options",
+      "page": 67,
+      "depth": 3
+    },
+    {
+      "number": "3.3.11.1",
+      "title": "User Guidelines for Setting the TX Equalizer in Loopback Mode",
+      "page": 70,
+      "depth": 4
+    },
+    {
+      "number": "3.4",
+      "title": "Dynamically Reconfigurable PHY",
+      "page": 71,
+      "depth": 2
+    },
+    {
+      "number": "3.4.1",
+      "title": "Clock Generation and Constraints for Multiple Profiles Design",
+      "page": 72,
+      "depth": 3
+    },
+    {
+      "number": "3.5",
+      "title": "Signal and Port Reference",
+      "page": 72,
+      "depth": 2
+    },
+    {
+      "number": "3.5.1",
+      "title": "TX and RX Parallel and Serial Interface Signals",
+      "page": 73,
+      "depth": 3
+    },
+    {
+      "number": "3.5.2",
+      "title": "TX and RX Reference Clock and Clock Output Interface Signals",
+      "page": 74,
+      "depth": 3
+    },
+    {
+      "number": "3.5.3",
+      "title": "Reset Signals",
+      "page": 75,
+      "depth": 3
+    },
+    {
+      "number": "3.5.4",
+      "title": "FEC Signals",
+      "page": 76,
+      "depth": 3
+    },
+    {
+      "number": "3.5.5",
+      "title": "Custom Cadence Control and Status Signals",
+      "page": 77,
+      "depth": 3
+    },
+    {
+      "number": "3.5.6",
+      "title": "TX PMA Control Signals",
+      "page": 77,
+      "depth": 3
+    },
+    {
+      "number": "3.5.7",
+      "title": "RX PMA Status Signals",
+      "page": 78,
+      "depth": 3
+    },
+    {
+      "number": "3.5.8",
+      "title": "TX and RX PMA and Core Interface FIFO Signals",
+      "page": 78,
+      "depth": 3
+    },
+    {
+      "number": "3.5.9",
+      "title": "Avalon Memory-Mapped Interface Signals",
+      "page": 79,
+      "depth": 3
+    },
+    {
+      "number": "3.6",
+      "title": "Bit Mapping for PMA, FEC, and PCS Mode PHY TX and RX Datapath",
+      "page": 80,
+      "depth": 2
+    },
+    {
+      "number": "3.7",
+      "title": "Clocking",
+      "page": 84,
+      "depth": 2
+    },
+    {
+      "number": "3.7.1",
+      "title": "Clock Ports",
+      "page": 85,
+      "depth": 3
+    },
+    {
+      "number": "3.7.2",
+      "title": "Recommended tx/rx_coreclkin Connection and tx/rx_clkout2 Source",
+      "page": 86,
+      "depth": 3
+    },
+    {
+      "number": "3.7.3",
+      "title": "Port Widths and Recommended Connections for tx/rx_coreclkin, tx/ rx_clkout, and tx/rx_clkout2",
+      "page": 87,
+      "depth": 3
+    },
+    {
+      "number": "3.7.4",
+      "title": "PMA Fractional Mode",
+      "page": 88,
+      "depth": 3
+    },
+    {
+      "number": "3.7.5",
+      "title": "Input Reference Clock Buffer Protection",
+      "page": 90,
+      "depth": 3
+    },
+    {
+      "number": "3.7.5.1",
+      "title": "Buffer Turn-on Request via Register Method",
+      "page": 91,
+      "depth": 4
+    },
+    {
+      "number": "3.7.5.2",
+      "title": "Buffer Turn-on Request via Status and Control Ports Method",
+      "page": 93,
+      "depth": 4
+    },
+    {
+      "number": "3.7.6",
+      "title": "Guidelines for Obtaining the Real-Time GTS TX PLL Lock Status",
+      "page": 93,
+      "depth": 3
+    },
+    {
+      "number": "3.8",
+      "title": "Custom Cadence Generation Ports and Logic",
+      "page": 95,
+      "depth": 2
+    },
+    {
+      "number": "3.8.1",
+      "title": "Implementing PMA Direct Mode with TX Core FIFO in Elastic Configuration",
+      "page": 97,
+      "depth": 3
+    },
+    {
+      "number": "3.8.2",
+      "title": "Enabling the i_tx_cadence_slow_clk_locked Port",
+      "page": 98,
+      "depth": 3
+    },
+    {
+      "number": "3.9",
+      "title": "Asserting Reset",
+      "page": 98,
+      "depth": 2
+    },
+    {
+      "number": "3.9.1",
+      "title": "Reset Signal Requirements",
+      "page": 99,
+      "depth": 3
+    },
+    {
+      "number": "3.9.2",
+      "title": "Power On Reset Requirements",
+      "page": 99,
+      "depth": 3
+    },
+    {
+      "number": "3.9.3",
+      "title": "Reset Signals—Block Level",
+      "page": 100,
+      "depth": 3
+    },
+    {
+      "number": "3.9.4",
+      "title": "Run-time Reset Sequence—TX",
+      "page": 100,
+      "depth": 3
+    },
+    {
+      "number": "3.9.5",
+      "title": "Run-time Reset Sequence—RX",
+      "page": 101,
+      "depth": 3
+    },
+    {
+      "number": "3.9.6",
+      "title": "Run-time Reset Sequence—TX + RX",
+      "page": 102,
+      "depth": 3
+    },
+    {
+      "number": "3.9.7",
+      "title": "RX Data Loss/CDR Lock Loss (Auto-Recovery)",
+      "page": 103,
+      "depth": 3
+    },
+    {
+      "number": "3.9.8",
+      "title": "TX PLL Lock Loss",
+      "page": 104,
+      "depth": 3
+    },
+    {
+      "number": "3.10",
+      "title": "Bonding Implementation",
+      "page": 105,
+      "depth": 2
+    },
+    {
+      "number": "3.10.1",
+      "title": "Bonding Placement Requirements",
+      "page": 105,
+      "depth": 3
+    },
+    {
+      "number": "3.10.2",
+      "title": "Multilane RX Simplex Implementation",
+      "page": 105,
+      "depth": 3
+    },
+    {
+      "number": "3.11",
+      "title": "Configuration Register",
+      "page": 106,
+      "depth": 2
+    },
+    {
+      "number": "3.11.1",
+      "title": "GTS PMA and FEC Direct PHY Soft CSR Register Map",
+      "page": 106,
+      "depth": 3
+    },
+    {
+      "number": "3.11.2",
+      "title": "GTS PMA Register Map",
+      "page": 107,
+      "depth": 3
+    },
+    {
+      "number": "3.11.2.1",
+      "title": "Logical Avalon Memory-Mapped Port Indexing",
+      "page": 108,
+      "depth": 4
+    },
+    {
+      "number": "3.11.3",
+      "title": "Accessing Configuration Registers",
+      "page": 110,
+      "depth": 3
+    },
+    {
+      "number": "3.11.3.1",
+      "title": "Accessing GTS PMA and FEC Direct PHY Soft CSR Registers",
+      "page": 110,
+      "depth": 4
+    },
+    {
+      "number": "3.11.3.2",
+      "title": "Accessing GTS PMA Registers",
+      "page": 110,
+      "depth": 4
+    },
+    {
+      "number": "3.12",
+      "title": "Configuring the GTS PMA/FEC Direct PHY IP for Hardware Testing",
+      "page": 111,
+      "depth": 2
+    },
+    {
+      "number": "3.12.1",
+      "title": "Using Debug Endpoint Interface within the GTS PMA/FEC Direct PHY IP",
+      "page": 111,
+      "depth": 3
+    },
+    {
+      "number": "3.12.1.1",
+      "title": "RTL Connection Example for Debug Endpoint Avalon Interface",
+      "page": 112,
+      "depth": 4
+    },
+    {
+      "number": "3.12.2",
+      "title": "Using JTAG to Avalon Master Bridge IP",
+      "page": 112,
+      "depth": 3
+    },
+    {
+      "number": "3.12.2.1",
+      "title": "RTL Connection Example for JTAG to Avalon Master Bridge IP",
+      "page": 114,
+      "depth": 4
+    },
+    {
+      "number": "3.13",
+      "title": "Configurable Quartus Prime Software Settings",
+      "page": 114,
+      "depth": 2
+    },
+    {
+      "number": "3.13.1",
+      "title": "Configuring the RX Adaptation Mode and PMA Manual Tuning",
+      "page": 118,
+      "depth": 3
+    },
+    {
+      "number": "3.14",
+      "title": "Hardware Configuration Using the Avalon Memory-Mapped Interface",
+      "page": 120,
+      "depth": 2
+    },
+    {
+      "number": "3.14.1",
+      "title": "Direct Register Method",
+      "page": 120,
+      "depth": 3
+    },
+    {
+      "number": "3.14.1.1",
+      "title": "Direct Register Method Examples",
+      "page": 120,
+      "depth": 4
+    },
+    {
+      "number": "3.14.2",
+      "title": "GTS Attribute Access Method",
+      "page": 123,
+      "depth": 3
+    },
+    {
+      "number": "3.14.2.1",
+      "title": "GTS Attribute Access Method Example 1: Enable or Disable Internal Serial Loopback Mode (RX Auto Adaptation Mode)",
+      "page": 126,
+      "depth": 4
+    },
+    {
+      "number": "3.14.2.2",
+      "title": "GTS Attribute Access Method Example 2: Enable or Disable Internal Serial Loopback Mode (RX Manual Equalization Mode)",
+      "page": 127,
+      "depth": 4
+    },
+    {
+      "number": "3.14.2.3",
+      "title": "GTS Attribute Access Method Example 3: Enable or Disable Polarity Inversion of the PMA",
+      "page": 128,
+      "depth": 4
+    },
+    {
+      "number": "3.14.2.4",
+      "title": "GTS Attribute Access Method Example 4: Enable PRBS Generator and Checker to Run BER Test",
+      "page": 129,
+      "depth": 4
+    },
+    {
+      "number": "4",
+      "title": "Implementing the GTS System PLL Clocks IP",
+      "page": 133,
+      "depth": 1
+    },
+    {
+      "number": "4.1",
+      "title": "IP Parameters",
+      "page": 133,
+      "depth": 2
+    },
+    {
+      "number": "4.2",
+      "title": "IP Port List",
+      "page": 135,
+      "depth": 2
+    },
+    {
+      "number": "4.3",
+      "title": "Mode of System PLL - System PLL Reference Clock and Output Frequencies",
+      "page": 135,
+      "depth": 2
+    },
+    {
+      "number": "4.4",
+      "title": "Guidelines for GTS System PLL Clocks IP Usage",
+      "page": 137,
+      "depth": 2
+    },
+    {
+      "number": "4.5",
+      "title": "Guidelines to Indicate System PLL Reference Clock is Ready",
+      "page": 137,
+      "depth": 2
+    },
+    {
+      "number": "4.5.1",
+      "title": "Example Flow to Indicate System PLL Reference Clock is Ready",
+      "page": 137,
+      "depth": 3
+    },
+    {
+      "number": "5",
+      "title": "Implementing the GTS Reset Sequencer IP",
+      "page": 139,
+      "depth": 1
+    },
+    {
+      "number": "5.1",
+      "title": "IP Requirements",
+      "page": 139,
+      "depth": 2
+    },
+    {
+      "number": "5.2",
+      "title": "IP Parameters",
+      "page": 139,
+      "depth": 2
+    },
+    {
+      "number": "5.3",
+      "title": "IP Port List",
+      "page": 141,
+      "depth": 2
+    },
+    {
+      "number": "5.4",
+      "title": "GTS Reset Sequencer IP General Interface",
+      "page": 142,
+      "depth": 2
+    },
+    {
+      "number": "5.5",
+      "title": "GTS Reset Sequencer IP Design Flow",
+      "page": 142,
+      "depth": 2
+    },
+    {
+      "number": "5.6",
+      "title": "GTS Reset Sequencer IP Use Cases",
+      "page": 144,
+      "depth": 2
+    },
+    {
+      "number": "5.6.1",
+      "title": "Example Use Case 1",
+      "page": 144,
+      "depth": 3
+    },
+    {
+      "number": "5.6.2",
+      "title": "Example Use Case 2",
+      "page": 144,
+      "depth": 3
+    },
+    {
+      "number": "5.7",
+      "title": "Connecting the Reference Clock Buffer Status to the GTS Reset Sequencer IP",
+      "page": 146,
+      "depth": 2
+    },
+    {
+      "number": "6",
+      "title": "GTS PMA/FEC Direct PHY IP Example Design",
+      "page": 147,
+      "depth": 1
+    },
+    {
+      "number": "6.1",
+      "title": "Instantiating the GTS PMA/FEC Direct PHY IP",
+      "page": 147,
+      "depth": 2
+    },
+    {
+      "number": "6.2",
+      "title": "Generating the GTS PMA/FEC Direct PHY IP Example Design",
+      "page": 148,
+      "depth": 2
+    },
+    {
+      "number": "6.2.1",
+      "title": "Fast Simulation Support",
+      "page": 150,
+      "depth": 3
+    },
+    {
+      "number": "6.2.2",
+      "title": "GTS PMA/FEC Direct PHY IP Example Design Directory Structure",
+      "page": 150,
+      "depth": 3
+    },
+    {
+      "number": "6.3",
+      "title": "GTS PMA/FEC Direct PHY IP Example Design Functional Description",
+      "page": 150,
+      "depth": 2
+    },
+    {
+      "number": "6.4",
+      "title": "Simulating the GTS PMA/FEC Direct PHY IP Example Design Testbench",
+      "page": 152,
+      "depth": 2
+    },
+    {
+      "number": "6.4.1",
+      "title": "Modifying the Example Design and Performing Simulation",
+      "page": 154,
+      "depth": 3
+    },
+    {
+      "number": "6.5",
+      "title": "Compiling the GTS PMA/FEC Direct PHY IP Example Design",
+      "page": 155,
+      "depth": 2
+    },
+    {
+      "number": "6.6",
+      "title": "GTS PMA/FEC Direct PHY IP Dynamically Reconfigurable PHY Example Design",
+      "page": 156,
+      "depth": 2
+    },
+    {
+      "number": "6.7",
+      "title": "Generating the GTS PMA/FEC Direct PHY IP Dynamically Reconfigurable Example Design",
+      "page": 156,
+      "depth": 2
+    },
+    {
+      "number": "6.7.1",
+      "title": "Fast Simulation Support",
+      "page": 158,
+      "depth": 3
+    },
+    {
+      "number": "6.7.2",
+      "title": "GTS PMA/FEC Direct PHY IP Dynamically Reconfigurable PHY Example Design Directory Structure",
+      "page": 158,
+      "depth": 3
+    },
+    {
+      "number": "6.8",
+      "title": "GTS PMA/FEC Direct PHY IP Dynamically Reconfigurable PHY Example Design Functional Description",
+      "page": 159,
+      "depth": 2
+    },
+    {
+      "number": "6.9",
+      "title": "Simulating the GTS PMA/FEC Direct PHY IP Dynamically Reconfigurable PHY Example Design Testbench",
+      "page": 160,
+      "depth": 2
+    },
+    {
+      "number": "6.10",
+      "title": "Compiling the GTS PMA/FEC Direct PHY IP Dynamically Reconfigurable PHY Example Design",
+      "page": 163,
+      "depth": 2
+    },
+    {
+      "number": "7",
+      "title": "Design Assistance Tools",
+      "page": 165,
+      "depth": 1
+    },
+    {
+      "number": "7.1",
+      "title": "Clocking and Datapath Tool",
+      "page": 165,
+      "depth": 2
+    },
+    {
+      "number": "7.2",
+      "title": "TX Equalizer Tool",
+      "page": 166,
+      "depth": 2
+    },
+    {
+      "number": "8",
+      "title": "Debugging GTS Transceiver Links with Transceiver Toolkit",
+      "page": 167,
+      "depth": 1
+    },
+    {
+      "number": "8.1",
+      "title": "GTS Transceiver Toolkit Parameter Settings",
+      "page": 167,
+      "depth": 2
+    },
+    {
+      "number": "8.2",
+      "title": "GTS Transceiver Toolkit GUI",
+      "page": 169,
+      "depth": 2
+    },
+    {
+      "number": "8.2.1",
+      "title": "Collection View",
+      "page": 170,
+      "depth": 3
+    },
+    {
+      "number": "8.3",
+      "title": "GTS Transceiver Debugging Flow Walkthrough",
+      "page": 171,
+      "depth": 2
+    },
+    {
+      "number": "8.3.1",
+      "title": "Modifying the Design to Enable GTS Transceiver Debug Toolkit",
+      "page": 171,
+      "depth": 3
+    },
+    {
+      "number": "8.3.2",
+      "title": "Programming the Design into an Altera FPGA",
+      "page": 172,
+      "depth": 3
+    },
+    {
+      "number": "8.3.3",
+      "title": "Loading the Design to the Transceiver Toolkit",
+      "page": 172,
+      "depth": 3
+    },
+    {
+      "number": "8.3.4",
+      "title": "Creating Transceiver Links",
+      "page": 173,
+      "depth": 3
+    },
+    {
+      "number": "8.3.5",
+      "title": "Running BER Tests",
+      "page": 176,
+      "depth": 3
+    },
+    {
+      "number": "8.3.6",
+      "title": "Running Eye Viewer Tests",
+      "page": 177,
+      "depth": 3
+    },
+    {
+      "number": "8.3.7",
+      "title": "Running Link Optimization Tests",
+      "page": 180,
+      "depth": 3
+    },
+    {
+      "number": "A",
+      "title": "Transceiver Toolkit Helper Script",
+      "page": 183,
+      "depth": 1
+    },
+    {
+      "number": "A.1",
+      "title": "Introduction",
+      "page": 183,
+      "depth": 2
+    },
+    {
+      "number": "A.2",
+      "title": "Executing the Script",
+      "page": 183,
+      "depth": 2
+    },
+    {
+      "number": "10",
+      "title": "Document Revision History for the GTS Transceiver PHY User Guide: Agilex 3 FPGAs and SoCs",
+      "page": 189,
+      "depth": 1
+    }
+  ],
+  "tables": [
+    {
+      "number": 1,
+      "title": "Key GTS Transceiver Features"
+    },
+    {
+      "number": 2,
+      "title": "Hard IP Configurations Supported with PMA"
+    },
+    {
+      "number": 3,
+      "title": "Channel Placement Location Requirement for Supported Hard IP"
+    },
+    {
+      "number": 4,
+      "title": "Design Rules Associated With Specific Use Scenarios"
+    },
+    {
+      "number": 5,
+      "title": "Steps to Preserve Unused PMA Channels"
+    },
+    {
+      "number": 6,
+      "title": "Supported PMA Data Widths and Date Rates"
+    },
+    {
+      "number": 7,
+      "title": "Transmitter PMA Equalizer Parameters"
+    },
+    {
+      "number": 8,
+      "title": "PCS Direct Supported Modes"
+    },
+    {
+      "number": 9,
+      "title": "Supported FEC Modes and Compliance Specifications"
+    },
+    {
+      "number": 10,
+      "title": "Reference Clock Source Comparison"
+    },
+    {
+      "number": 11,
+      "title": "Supported Datapath Clock Frequencies and Cadences by Datapath Clocking"
+    },
+    {
+      "number": 12,
+      "title": "HVIO Bank and GTS Transceiver Channel Sharing"
+    },
+    {
+      "number": 13,
+      "title": "Bonding Clocking Modes"
+    },
+    {
+      "number": 14,
+      "title": "PMA Direct Mode Support"
+    },
+    {
+      "number": 15,
+      "title": "FEC Direct IP Configuration Mode Support"
+    },
+    {
+      "number": 16,
+      "title": "PCS Direct IP Configuration Mode Support"
+    },
+    {
+      "number": 17,
+      "title": "Preset IP Settings"
+    },
+    {
+      "number": 18,
+      "title": "Mode Parameter"
+    },
+    {
+      "number": 19,
+      "title": "Common Datapath Options Parameters"
+    },
+    {
+      "number": 20,
+      "title": "Refclk Recovery (Reference Clock Buffer Recovery)"
+    },
+    {
+      "number": 21,
+      "title": "TX/RX Common PMA Options Parameters"
+    },
+    {
+      "number": 22,
+      "title": "Common Settings Dynamically Reconfigurable PHY Parameters"
+    },
+    {
+      "number": 23,
+      "title": "TX Datapath Options Parameters"
+    },
+    {
+      "number": 24,
+      "title": "TX PMA Interface Parameters"
+    },
+    {
+      "number": 25,
+      "title": "RX Datapath Options Parameters"
+    },
+    {
+      "number": 26,
+      "title": "RX PMA Interface Parameters"
+    },
+    {
+      "number": 27,
+      "title": "Configurations Supported in SDI Mode"
+    },
+    {
+      "number": 28,
+      "title": "Configurations Supported in HDMI Mode"
+    },
+    {
+      "number": 29,
+      "title": "OTN (PMA Direct) Configuration Options"
+    },
+    {
+      "number": 30,
+      "title": "FEC Parameters"
+    },
+    {
+      "number": 31,
+      "title": "PCS Direct Parameters"
+    },
+    {
+      "number": 32,
+      "title": "Avalon Memory-Mapped Interface Parameters"
+    },
+    {
+      "number": 33,
+      "title": "GTS PMA Transmitter Analog Settings"
+    },
+    {
+      "number": 34,
+      "title": "GTS PMA Receiver Analog Settings"
+    },
+    {
+      "number": 35,
+      "title": "TX Equalizer Recommended Settings"
+    },
+    {
+      "number": 36,
+      "title": "Variables Defining Bits for the Interfacing Ports in Port and Signal Reference"
+    },
+    {
+      "number": 37,
+      "title": "TX and RX Parallel and Serial Interface Signals"
+    },
+    {
+      "number": 38,
+      "title": "TX and RX Reference Clock and Clock Output Interface Signals"
+    },
+    {
+      "number": 39,
+      "title": "Reset Signals"
+    },
+    {
+      "number": 40,
+      "title": "FEC Signals"
+    },
+    {
+      "number": 41,
+      "title": "Custom Cadence Control and Status Signals"
+    },
+    {
+      "number": 42,
+      "title": "TX PMA Control Signals"
+    },
+    {
+      "number": 43,
+      "title": "RX PMA Status Signals"
+    },
+    {
+      "number": 44,
+      "title": "TX and RX PMA and Core Interface FIFO Signals"
+    },
+    {
+      "number": 45,
+      "title": "Avalon Memory-Mapped Interface Signals (Enable Separate Avalon Interface"
+    },
+    {
+      "number": 46,
+      "title": "Avalon Memory-Mapped Interface Signals (Enable Separate Avalon Interface"
+    },
+    {
+      "number": 47,
+      "title": "Variable Definitions"
+    },
+    {
+      "number": 48,
+      "title": "PMA Direct Mode Parallel Data Calculations"
+    },
+    {
+      "number": 49,
+      "title": "FEC Direct Mode Parallel Data Calculations"
+    },
+    {
+      "number": 50,
+      "title": "Example of Bit Mapping of TX Parallel Data Bits for PMA Direct Mode with"
+    },
+    {
+      "number": 51,
+      "title": "PCS Direct Mode — IEEE MII Interface Parallel Data Calculations"
+    },
+    {
+      "number": 52,
+      "title": "TX and RX Parallel Data to IEEE MII Port Mapping Signals for PCS Direct Mode"
+    },
+    {
+      "number": 53,
+      "title": "PCS Direct Mode — IEEE_FLEXE_66/PCS66 Parallel Data Calculations"
+    },
+    {
+      "number": 54,
+      "title": "TX and RX Parallel Data to IEEE_FLEXE_66/PCS66 Mapping Signals for PCS"
+    },
+    {
+      "number": 55,
+      "title": "Recommended Connection and Source"
+    },
+    {
+      "number": 56,
+      "title": "Port Widths and Recommended Connections"
+    },
+    {
+      "number": 57,
+      "title": "Example with Number of PMA Lane = 1"
+    },
+    {
+      "number": 58,
+      "title": "Example with Number of PMA Lanes = 4"
+    },
+    {
+      "number": 59,
+      "title": "PMA Support for Fractional Mode"
+    },
+    {
+      "number": 60,
+      "title": "GTS PMA Fractional k Counter and Strobe Register Addresses"
+    },
+    {
+      "number": 61,
+      "title": "Reference Clock Buffer Register Bit Information"
+    },
+    {
+      "number": 62,
+      "title": "GTS TX PLL Avalon Memory-Mapped Address"
+    },
+    {
+      "number": 63,
+      "title": "Custom Cadence Generation Ports and Logic Use Cases"
+    },
+    {
+      "number": 64,
+      "title": "tx_cadence_fast_clk and tx_cadence_slow_clk connections"
+    },
+    {
+      "number": 65,
+      "title": "Reset Signals—Block Level"
+    },
+    {
+      "number": 66,
+      "title": "Bonding Implementation"
+    },
+    {
+      "number": 67,
+      "title": "MSB Address Bits for Logical Avalon Memory-Mapped Reconfiguration Port"
+    },
+    {
+      "number": 68,
+      "title": "Lane Number and Address Offset"
+    },
+    {
+      "number": 69,
+      "title": "TX Equalization HSSI Parameter Name and Values"
+    },
+    {
+      "number": 70,
+      "title": "TX Invert Pin HSSI Parameter Name and Values"
+    },
+    {
+      "number": 71,
+      "title": "RX AC Coupling HSSI Parameter Name and Values"
+    },
+    {
+      "number": 72,
+      "title": "RX Termination Mode HSSI Parameter Name and Values"
+    },
+    {
+      "number": 73,
+      "title": "RX On-Chip Termination HSSI Parameter Name and Values"
+    },
+    {
+      "number": 74,
+      "title": "RX Invert Pin HSSI Parameter Name and Values"
+    },
+    {
+      "number": 75,
+      "title": "GTS Attribute Access Addresses for JTAG Master that Controls 4 Channels"
+    },
+    {
+      "number": 76,
+      "title": "GTS Attribute Access Data Value 1"
+    },
+    {
+      "number": 77,
+      "title": "GTS Attribute Access Data Value 2"
+    },
+    {
+      "number": 78,
+      "title": "GTS Attribute Access Data Value 3"
+    },
+    {
+      "number": 79,
+      "title": "GTS System PLL Clocks IP Parameters"
+    },
+    {
+      "number": 80,
+      "title": "GTS System PLL Clocks IP Port List"
+    },
+    {
+      "number": 81,
+      "title": "Preset Reference Clock and Output Frequencies"
+    },
+    {
+      "number": 82,
+      "title": "Port Connection Guidelines between GTS System PLL Clocks IP and GTS"
+    },
+    {
+      "number": 83,
+      "title": "Logic Usage of the GTS Reset Sequencer IP (For Agilex 3 C-Series Devices)"
+    },
+    {
+      "number": 84,
+      "title": "GTS Reset Sequencer IP Parameters"
+    },
+    {
+      "number": 85,
+      "title": "GTS Reset Sequencer IP Port List"
+    },
+    {
+      "number": 86,
+      "title": "GTS Reset Sequencer IP Parameter Settings for Use Case 1"
+    },
+    {
+      "number": 87,
+      "title": "GTS Reset Sequencer IP Parameter Settings for Use Case 2"
+    },
+    {
+      "number": 88,
+      "title": "Input and Output Ports of Clock Buffer Bit Information"
+    },
+    {
+      "number": 89,
+      "title": "Example Design Options"
+    },
+    {
+      "number": 90,
+      "title": "Example Design Directory Structure and Description"
+    },
+    {
+      "number": 91,
+      "title": "Example Design Functional Description"
+    },
+    {
+      "number": 92,
+      "title": "Example Design Clock Sources"
+    },
+    {
+      "number": 93,
+      "title": "Example Design Options for the Dynamically Reconfigurable PHY"
+    },
+    {
+      "number": 94,
+      "title": "Example Design Directory Structure and Description"
+    },
+    {
+      "number": 95,
+      "title": "Transceiver Toolkit Parameter Settings"
+    }
+  ],
+  "figures": [
+    {
+      "number": 1,
+      "title": "GTS Transceiver Design Flow"
+    },
+    {
+      "number": 2,
+      "title": "High-Level Block Diagram of a GTS Transceiver Bank"
+    },
+    {
+      "number": 3,
+      "title": "GTS Transceiver Bank Layout for C-Series FPGAs with 4 GTS Transceivers"
+    },
+    {
+      "number": 4,
+      "title": "PMA Direct OTN Mode"
+    },
+    {
+      "number": 5,
+      "title": "Channel Placement for Hardened PCIe IP Configurations Across GTS"
+    },
+    {
+      "number": 6,
+      "title": "Channel Placement for Hardened Ethernet IP Configuration in the GTS"
+    },
+    {
+      "number": 7,
+      "title": "Channel Placement for Hardened USB3.1 IP Configuration in the GTS"
+    },
+    {
+      "number": 8,
+      "title": "Channel Placement for PMA Direct Configuration for Bonded Lane"
+    },
+    {
+      "number": 9,
+      "title": "PMA Block Diagram"
+    },
+    {
+      "number": 10,
+      "title": "Simplified TX Buffer Termination"
+    },
+    {
+      "number": 11,
+      "title": "Serializer"
+    },
+    {
+      "number": 12,
+      "title": "Simplified Receiver Analog Front End"
+    },
+    {
+      "number": 13,
+      "title": "Deserializer"
+    },
+    {
+      "number": 14,
+      "title": "PMA Loopback Modes"
+    },
+    {
+      "number": 15,
+      "title": "FEC Loopback Mode"
+    },
+    {
+      "number": 16,
+      "title": "Clock Network"
+    },
+    {
+      "number": 17,
+      "title": "Reference Clock Network for Agilex 3 C-Series Devices"
+    },
+    {
+      "number": 18,
+      "title": "Primary PLL Configuration"
+    },
+    {
+      "number": 19,
+      "title": "System PLL Clocking Mode"
+    },
+    {
+      "number": 20,
+      "title": "PMA Clocking Mode"
+    },
+    {
+      "number": 21,
+      "title": "System PLL Clock Network"
+    },
+    {
+      "number": 22,
+      "title": "Example of 10 Gbps Ethernet with MAC and PCS Blocks Using Overclocked"
+    },
+    {
+      "number": 23,
+      "title": "Shared Clocking Resources Between the GTS Transceiver Bank and HVIO"
+    },
+    {
+      "number": 24,
+      "title": "Example of PCS Direct (Tx Datapath/Tx Simplex) with x2 Bonding"
+    },
+    {
+      "number": 25,
+      "title": "Example of PCS Direct (Rx Datapath/Rx Simplex) with x2 Lanes"
+    },
+    {
+      "number": 26,
+      "title": "PMA Direct Mode with PMA Clocking"
+    },
+    {
+      "number": 27,
+      "title": "PMA Direct Mode with System Clocking"
+    },
+    {
+      "number": 28,
+      "title": "FEC Direct Mode with System PLL Clocking"
+    },
+    {
+      "number": 29,
+      "title": "PCS Direct Mode with System PLL Clocking"
+    },
+    {
+      "number": 30,
+      "title": "GTS PMA/FEC Direct PHY IP Connections"
+    },
+    {
+      "number": 31,
+      "title": "Available Parameter Presets In Parameter Editor"
+    },
+    {
+      "number": 32,
+      "title": "GTS PMA/FEC Direct PHY IP Parameter Editor"
+    },
+    {
+      "number": 33,
+      "title": "Dynamically Reconfigurable PHY Settings in Parameter Editor"
+    },
+    {
+      "number": 34,
+      "title": "TX Datapath Options in Parameter Editor"
+    },
+    {
+      "number": 35,
+      "title": "TX PMA Interface Parameters in Parameter Editor"
+    },
+    {
+      "number": 36,
+      "title": "RX Datapath Options in Parameter Editor"
+    },
+    {
+      "number": 37,
+      "title": "RX PMA Interface Options in Parameter Editor"
+    },
+    {
+      "number": 38,
+      "title": "FEC Options in Parameter Editor"
+    },
+    {
+      "number": 39,
+      "title": "PCS Options in Parameter Editor"
+    },
+    {
+      "number": 40,
+      "title": "Avalon Memory-Mapped Interface Tab in Parameter Editor"
+    },
+    {
+      "number": 41,
+      "title": "IP-XACT Generation Setting"
+    },
+    {
+      "number": 42,
+      "title": "Analog Parameter Options in Parameter Editor"
+    },
+    {
+      "number": 43,
+      "title": "Dynamically Reconfigurable PHY Profile Tabs"
+    },
+    {
+      "number": 44,
+      "title": "tx_clkout and tx_clkout2"
+    },
+    {
+      "number": 45,
+      "title": "rx_clkout and rx_clkout2"
+    },
+    {
+      "number": 46,
+      "title": "System Message for PLL Fractional Settings"
+    },
+    {
+      "number": 47,
+      "title": "Sequence for Re-enabling Refclk Buffer"
+    },
+    {
+      "number": 48,
+      "title": "System Message for TX PLL Settings"
+    },
+    {
+      "number": 49,
+      "title": "TX PLL Real-Time Lock Behavior"
+    },
+    {
+      "number": 50,
+      "title": "TX User Clock Setting"
+    },
+    {
+      "number": 51,
+      "title": "Reset Top-Level Diagram"
+    },
+    {
+      "number": 52,
+      "title": "Run-time Reset Sequence—TX"
+    },
+    {
+      "number": 53,
+      "title": "Run-time Reset Sequence—RX"
+    },
+    {
+      "number": 54,
+      "title": "Run-time Reset Sequence—TX + RX"
+    },
+    {
+      "number": 55,
+      "title": "Reset Sequence for RX Data Loss or CDR Lock Loss"
+    },
+    {
+      "number": 56,
+      "title": "Reset Sequence for TX PLL Lock Loss"
+    },
+    {
+      "number": 57,
+      "title": "Bonding Channel Placement Requirement Guidelines"
+    },
+    {
+      "number": 58,
+      "title": "Multilane RX Simplex Implementation"
+    },
+    {
+      "number": 59,
+      "title": "Avalon Memory-Mapped Interface Parameter Settings For Soft CSR Register"
+    },
+    {
+      "number": 60,
+      "title": "Avalon Memory-Mapped Interface Parameter Settings For PMA Register Map"
+    },
+    {
+      "number": 61,
+      "title": "Example of Verilog Testbench Code When Performing Read Operation to TX"
+    },
+    {
+      "number": 62,
+      "title": "Avalon Memory-Mapped Interface Parameter Settings to Enable Debug"
+    },
+    {
+      "number": 63,
+      "title": "Example RTL Connections for a One GTS PMA Lane Design"
+    },
+    {
+      "number": 64,
+      "title": "Avalon Memory-Mapped Interface Parameter Settings to Enable JTAG to"
+    },
+    {
+      "number": 65,
+      "title": "IP Catalog"
+    },
+    {
+      "number": 66,
+      "title": "Example RTL Connections for the JTAG to Avalon Master Bridge IP"
+    },
+    {
+      "number": 67,
+      "title": "Assignment Editor Example for TX Equalization"
+    },
+    {
+      "number": 68,
+      "title": "Assignment Editor Example for RX AC Coupling"
+    },
+    {
+      "number": 69,
+      "title": "Assignment Editor Example for RX On-Chip Termination"
+    },
+    {
+      "number": 70,
+      "title": "GTS System PLL Clocks IP Parameter Editor"
+    },
+    {
+      "number": 71,
+      "title": "GTS Reset Sequencer IP Parameter Editor"
+    },
+    {
+      "number": 72,
+      "title": "GTS Reset Sequencer IP General Interface"
+    },
+    {
+      "number": 73,
+      "title": "IP Catalog"
+    },
+    {
+      "number": 74,
+      "title": "IP Parameters for Lane Selection"
+    },
+    {
+      "number": 75,
+      "title": "Example Use Case 1"
+    },
+    {
+      "number": 76,
+      "title": "Example Use Case 2"
+    },
+    {
+      "number": 77,
+      "title": "Reference Clock Buffer Status Connection"
+    },
+    {
+      "number": 78,
+      "title": "IP Catalog"
+    },
+    {
+      "number": 79,
+      "title": "GTS PMA/FEC Direct PHY IP Example Design Steps"
+    },
+    {
+      "number": 80,
+      "title": "Simulation Testbench Block Diagram for the GTS PMA/FEC Direct PHY IP"
+    },
+    {
+      "number": 81,
+      "title": "Steps to Simulate the Example Design"
+    },
+    {
+      "number": 82,
+      "title": "Sample Results for the PMA Direct PHY Example Design Testbench"
+    },
+    {
+      "number": 83,
+      "title": "Sample Results for the FEC Direct PHY Example Design Testbench"
+    },
+    {
+      "number": 84,
+      "title": "Example Design Compilation Flow"
+    },
+    {
+      "number": 85,
+      "title": "Simulation Testbench Block Diagram for the Dynamically Reconfigurable PHY"
+    },
+    {
+      "number": 86,
+      "title": "Steps to Simulate the Example Design"
+    },
+    {
+      "number": 87,
+      "title": "Sample Results for the Dynamically Reconfigurable PHY Example Design"
+    },
+    {
+      "number": 88,
+      "title": "Example Design Compilation Flow"
+    },
+    {
+      "number": 89,
+      "title": "Clocking and Datapath Tool"
+    },
+    {
+      "number": 90,
+      "title": "GTS Transceiver TX Equalization Tool"
+    },
+    {
+      "number": 91,
+      "title": "GTS Transceiver Toolkit GUI"
+    },
+    {
+      "number": 92,
+      "title": "Collection View Tab of the GTS Transceiver Toolkit GUI"
+    },
+    {
+      "number": 93,
+      "title": "Parameters to Enable Transceiver Toolkit in GTS PMA/FEC Direct PHY IP"
+    },
+    {
+      "number": 94,
+      "title": "System Explorer Pane"
+    },
+    {
+      "number": 95,
+      "title": "Toolkit Explorer"
+    },
+    {
+      "number": 96,
+      "title": "Export Collections"
+    },
+    {
+      "number": 97,
+      "title": "Import Collections"
+    },
+    {
+      "number": 98,
+      "title": "Toolkit Parameters Tab"
+    },
+    {
+      "number": 99,
+      "title": "Example BER Test Setup and Results"
+    },
+    {
+      "number": 100,
+      "title": "Setting the BER for Eye Measurement Options"
+    },
+    {
+      "number": 101,
+      "title": "Eye Measurement Results"
+    },
+    {
+      "number": 102,
+      "title": "Select Parameter Window"
+    },
+    {
+      "number": 103,
+      "title": "Input Parameters Pane"
+    },
+    {
+      "number": 104,
+      "title": "Select Metric Window"
+    },
+    {
+      "number": 105,
+      "title": "Example of Autosweep View"
+    },
+    {
+      "number": 106,
+      "title": "Script Source Output in Messages Window"
+    },
+    {
+      "number": 107,
+      "title": "Show PMA Setting Function Call Output"
+    },
+    {
+      "number": 108,
+      "title": "Show PMA Setting Function Call Output with 1 Channel Loopback Enabled"
+    },
+    {
+      "number": 109,
+      "title": "BER Function Call Output"
+    }
+  ],
+  "counts": {
+    "sections": 194,
+    "tables": 95,
+    "figures": 109,
+    "notes": 94,
+    "related_information_blocks": 26,
+    "numbered_step_lines": 444
+  },
+  "symbols": {
+    "™": 4,
+    "®": 8,
+    "©": 10,
+    "×": 6,
+    "–": 22,
+    "—": 228,
+    "≥": 4,
+    "≤": 4,
+    "Ω": 3
+  },
+  "must_not_appear": [
+    "Draft Copy—Do Not Distribute",
+    "© Altera Corporation. Altera, the Altera logo",
+    "*Other names and brands may be claimed as the property of others.",
+    "GTS Transceiver PHY User Guide: Agilex 3 FPGAs and SoCs"
+  ],
+  "reference_boilerplate_occurrences": {
+    "Draft Copy—Do Not Distribute": 190,
+    "© Altera Corporation. Altera, the Altera logo": 10,
+    "*Other names and brands may be claimed as the property of others.": 10,
+    "GTS Transceiver PHY User Guide: Agilex 3 FPGAs and SoCs": 179
+  },
+  "mojibake_in_reference": 0
+}
