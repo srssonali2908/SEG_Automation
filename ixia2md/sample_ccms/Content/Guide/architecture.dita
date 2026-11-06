@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept id="architecture">
+  <title>GTS Transceiver Architecture</title>
+  <conbody>
+    <section><title>Building Blocks</title><p>The bank holds four PMAs.</p></section>
+    <section><title>PMA Architecture</title><p>See <xref href="overview.dita">the overview</xref>.</p></section>
+  </conbody>
+</concept>
