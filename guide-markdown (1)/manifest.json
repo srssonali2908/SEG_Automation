@@ -1,0 +1,26 @@
+{
+  "document_id": "/Content/Guide/guide.ditamap",
+  "origin_id": "",
+  "version": "3",
+  "snapshot": "/Snapshots/guide_v3",
+  "snapshot_status": "Published",
+  "snapshot_created": "2026-10-10T09:00:00Z",
+  "flavor": "markdown_github",
+  "layout": "single",
+  "converted_at": "2026-11-06T01:33:42+00:00",
+  "source": "IXIA CCMS",
+  "combined_file": "guide.md",
+  "files_downloaded": 7,
+  "counts": {
+    "maps": 1,
+    "topics": 5,
+    "images": 1,
+    "other": 0
+  },
+  "quality": {
+    "PASS": 22,
+    "WARN": 0,
+    "FAIL": 0
+  },
+  "seconds": 21.1
+}
