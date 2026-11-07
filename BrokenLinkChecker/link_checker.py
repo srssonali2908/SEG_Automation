@@ -7,18 +7,34 @@ over HTTP and produces a CSV report.
 
 Command-line usage:
     python link_checker.py <file.pdf> [-o report.csv] [--workers 8]
+
+Runs on Python 3 and on Python 2.7 (for older web2py servers), with either
+pypdf or PyPDF2.
 """
+from __future__ import print_function
+
 import argparse
 import csv
 import io
 import os
 import re
 import sys
-from concurrent.futures import ThreadPoolExecutor
-from urllib.parse import urlparse
+from multiprocessing.pool import ThreadPool
 
 import requests
-from pypdf import PdfReader
+
+try:
+    from urllib.parse import urlparse
+except ImportError:
+    from urlparse import urlparse
+
+try:
+    from pypdf import PdfReader
+except ImportError:
+    from PyPDF2 import PdfFileReader as PdfReader
+
+PY2 = sys.version_info[0] == 2
+text_type = unicode if PY2 else str  # noqa: F821
 
 USER_AGENT = {
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"
@@ -49,6 +65,7 @@ CSV_HEADER = [
 ]
 
 STATUS_VPN = "Corporate Network Required"
+NO_LINKS_MESSAGE = "No hyperlinked web URLs found in this PDF document."
 
 
 def _is_corporate(url):
@@ -164,50 +181,94 @@ def extract_links(pdf_source):
         annots = page.get("/Annots")
         if not annots:
             continue
-        for annot in annots.get_object():
-            annot_obj = annot.get_object()
-            action = annot_obj.get("/A")
+        for annot in _resolve(annots):
+            action = _resolve(annot).get("/A")
             if action is None:
                 continue
-            action = action.get_object()
-            uri = action.get("/URI")
+            uri = _resolve(action).get("/URI")
             if uri is None:
                 continue
-            uri = uri.get_object()
-            if isinstance(uri, bytes):
-                uri = uri.decode("utf-8", errors="replace")
-            uri = str(uri).strip()
+            uri = _resolve(uri)
+            if isinstance(uri, bytes) and not isinstance(uri, text_type):
+                uri = uri.decode("utf-8", "replace")
+            uri = text_type(uri).strip()
             if uri.lower().startswith("http"):
                 links.append((index + 1, uri))
     return links
 
 
+def _resolve(obj):
+    """Dereference an indirect PDF object (pypdf and PyPDF2 spell this differently)."""
+    getter = getattr(obj, "get_object", None) or getattr(obj, "getObject", None)
+    return getter() if getter else obj
+
+
+def check_links(links, workers=8, progress=None):
+    """
+    Check (page_number, url) pairs and return report rows matching CSV_HEADER.
+
+    progress, if given, is called as progress(done, total) after each distinct
+    URL finishes. Each distinct URL is checked once, even if it appears on
+    many pages.
+    """
+    unique_urls = list(dict.fromkeys(url for _, url in links))
+    results = {}
+    pool = ThreadPool(max(1, min(workers, len(unique_urls) or 1)))
+    try:
+        checked = pool.imap_unordered(_check_one, unique_urls)
+        for done, (url, result) in enumerate(checked, 1):
+            results[url] = result
+            if progress:
+                progress(done, len(unique_urls))
+    finally:
+        pool.close()
+        pool.join()
+
+    rows = []
+    for page_num, url in links:
+        status, redirect, is_intel = results[url]
+        rows.append([page_num, url, status, redirect or "None", is_intel, is_broken(status)])
+    return rows
+
+
+def _check_one(url):
+    return url, check_link(url)
+
+
+def rows_to_csv(rows):
+    """CSV text for the report (UTF-8 encoded bytes on Python 2)."""
+    rows = [CSV_HEADER] + list(rows)
+    if PY2:
+        output = io.BytesIO()
+        rows = [[text_type(cell).encode("utf-8") for cell in row] for row in rows]
+    else:
+        output = io.StringIO()
+    csv.writer(output).writerows(rows)
+    return output.getvalue()
+
+
+def csv_bytes(csv_text):
+    """UTF-8 bytes with a BOM, so Excel opens the report with the right encoding."""
+    if not isinstance(csv_text, bytes):
+        csv_text = csv_text.encode("utf-8")
+    return b"\xef\xbb\xbf" + csv_text
+
+
+def _message_row(message):
+    return [message] + [""] * (len(CSV_HEADER) - 1)
+
+
 def scrape_pdf_links(pdf_source, workers=8):
     """Extract and check every link in a PDF, returning the CSV report as text."""
-    output = io.StringIO()
-    writer = csv.writer(output)
-    writer.writerow(CSV_HEADER)
-
     try:
         links = extract_links(pdf_source)
     except Exception as e:
-        writer.writerow(["Error reading PDF: {}".format(e), "", "", "", "", ""])
-        return output.getvalue()
+        return rows_to_csv([_message_row("Error reading PDF: {}".format(e))])
 
     if not links:
-        writer.writerow(["No hyperlinked web URLs found in this PDF document.", "", "", "", "", ""])
-        return output.getvalue()
+        return rows_to_csv([_message_row(NO_LINKS_MESSAGE)])
 
-    # Each distinct URL is checked once, even if it appears on many pages.
-    unique_urls = list(dict.fromkeys(url for _, url in links))
-    with ThreadPoolExecutor(max_workers=max(1, workers)) as pool:
-        results = dict(zip(unique_urls, pool.map(check_link, unique_urls)))
-
-    for page_num, url in links:
-        status, redirect, is_intel = results[url]
-        writer.writerow([page_num, url, status, redirect or "None", is_intel, is_broken(status)])
-
-    return output.getvalue()
+    return rows_to_csv(check_links(links, workers=workers))
 
 
 def report_filename(pdf_name):
@@ -225,14 +286,19 @@ def main(argv=None):
     if not os.path.isfile(args.pdf):
         parser.error("File not found: {}".format(args.pdf))
 
-    csv_data = scrape_pdf_links(args.pdf, workers=args.workers)
-    out_path = args.output or report_filename(args.pdf)
-    with open(out_path, "w", newline="", encoding="utf-8-sig") as f:
-        f.write(csv_data)
+    try:
+        links = extract_links(args.pdf)
+    except Exception as e:
+        links, rows = [], [_message_row("Error reading PDF: {}".format(e))]
+    else:
+        rows = check_links(links, workers=args.workers) if links else [_message_row(NO_LINKS_MESSAGE)]
 
-    rows = [row for row in csv.reader(io.StringIO(csv_data)) if row and row[0].isdigit()]
-    broken = sum(1 for row in rows if row[5] == "Yes")
-    print("Checked {} link(s), {} broken. Report saved to {}".format(len(rows), broken, out_path))
+    out_path = args.output or report_filename(args.pdf)
+    with open(out_path, "wb") as f:
+        f.write(csv_bytes(rows_to_csv(rows)))
+
+    broken = sum(1 for row in rows if row[5] == "Yes") if links else 0
+    print("Checked {} link(s), {} broken. Report saved to {}".format(len(links), broken, out_path))
     return 0
 
 
