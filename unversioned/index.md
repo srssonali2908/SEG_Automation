@@ -5,10 +5,10 @@ title: FIR II IP Core Release Notes
 description: FIR II IP Core Release Notes
 family: NA
 category: User Guide
-content_classification: confidential
+content_classification: public
 design_type: NA
 quartus_version: unversioned
-author: TODO-set-author-email@altera.com
+author: sonali.raj.sonal@altera.com
 published: false
 prod_publishers: TODO-set-github-usernames
 --- metadata -- end --
